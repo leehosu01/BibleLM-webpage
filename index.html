@@ -1,0 +1,38 @@
+<html><head>
+
+
+</head>
+
+<body>
+
+<div id="title"><h2>BibleLM</h2></div>
+제시문장 : <input id='sentence' type='text'/><br>
+<button type="button" onclick="loadTxt()">내용변환</button>
+<div id="myDiv"></div>
+
+<script type="text/javascript">
+
+   function loadTxt() {
+
+      xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : alert("XMLHTTP를 지원하지 않는 브라우저입니다");
+
+xmlhttp.onreadystatechange = function() { if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+
+         document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+
+     }
+
+   }
+   var sent = document.getElementById('sentence').value;
+   xmlhttp.open("GET","https://biblelm-api-itaggkwsta-uc.a.run.app/inference?samples=1&sentence="+sent,true);
+
+   xmlhttp.send();
+
+}
+
+</script>
+
+
+
+
+</body></html>
