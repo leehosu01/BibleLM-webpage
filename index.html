@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html><head>
 
 
@@ -6,7 +7,7 @@
 <body>
 
 <div id="title"><h2>BibleLM</h2></div>
-제시문장 : <input id='sentence' type='text'/><br>
+제시문장 : <input id="sentence" type="text" onkeyup="if(window.event.ctrlKey && window.event.keyCode==13)loadTxt()"><br>
 <button type="button" onclick="loadTxt()">내용변환</button>
 <div id="myDiv"></div>
 
